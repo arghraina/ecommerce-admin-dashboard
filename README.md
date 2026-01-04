@@ -1,3 +1,67 @@
+# E-Commerce Admin Dashboard (SSR)
+
+A server-side rendered admin dashboard for managing products in an e-commerce platform. Built with Next.js App Router, MongoDB, and Cloudinary, this application allows administrators to perform full CRUD operations with fast performance and SEO benefits.
+
+---
+
+# Features
+
+- Server-Side Rendering (SSR) using Next.js App Router
+- Product Management (Create, Read, Delete)
+- Stock Management with Low-Stock Highlight
+- Category-based Stock Visualization (Recharts)
+- Secure Image Upload using Cloudinary
+- MongoDB Atlas Integration
+- Server Actions for Mutations
+- Production-ready deployment (Vercel)
+
+
+# Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Database:** MongoDB Atlas + Mongoose
+- **Image Storage:** Cloudinary
+- **Charts:** Recharts
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+
+---
+
+# Project Structure
+
+-   src/
+    -   app/
+    -       page.js # Dashboard
+    -       products/
+    -           page.js # Product list
+    -           new/page.js # Add product
+    -           ProductRow.jsx
+    -       api/
+    -           products/
+    -               route.js # GET / POST
+    -               [id]/route.js
+    -           dashboard/
+    -               route.js
+    -               products/[id]/route.js
+    -           categories/route.js
+    -   components/
+    -       Sidebar.js
+    -   lib/
+    -       mongodb.js
+    -   models/
+    -       Product.js
+
+# Environment Variables
+
+Create a `.env.local` file:
+
+- env:
+    MONGODB_URI=your_mongodb_atlas_uri       
+    NEXT_PUBLIC_APP_URL=http://localhost:3000
+-   <!-- This NEXT_PUBLIC_APP changes while actual deployment of the project. -->
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
