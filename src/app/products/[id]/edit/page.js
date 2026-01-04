@@ -1,7 +1,9 @@
 import { redirect } from "next/navigation";
 
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 async function getProduct(id) {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`${BASE_URL}/api/products/${id}`, {
     cache: "no-store",
   });
 
@@ -17,7 +19,7 @@ export default async function EditProductPage({ params }) {
   async function updateProduct(formData) {
     "use server";
 
-    await fetch(`http://localhost:3000/api/products/${id}`, {
+    await fetch(`${BASE_URL}/api/products/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
